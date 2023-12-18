@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+    <link rel="icon" tyle="image" href="{{ url_for('static', filename='images/almond-logo.png') }}">
+    <script src="{{ url_for('static', filename='scripts/index.js') }}" defer></script>
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+    <nav>
+        <div id="productLogo">
+            <img alt="almond product logo" src="{{ url_for('static', filename='images/almond-logo.png') }}"/>
+            Almond
+        </div>
+        <ul>
+            <li>Features</li>
+            <li>For Teams</li>
+            <li onmouseover="showResourcesFlyover()" onclick="hideResourcesFlyover()">Resources</li>
+            <li>Pricing</li>
+            <li><div class="verticalSeparator"></div></li>
+            <li>Log in</li>
+            <li><button class="navButton">Start for free</button></li>
+        </ul>
+        <div id="flyoverContainer" onmouseleave="hideResourcesFlyover()">
+            <div class="flyoverEntry">
+                <h3>Integrations</h3>
+                Connect Almond with tools like Alexa, Google Calendar etc
+            </div>
+
+            <div class="flyoverEntry">
+                <h3>Getting started guide</h3>
+                Everything you need to know to get your Almond setup up and running
+            </div>
+
+        </div>
+    </nav>
+    {% block content %}{% endblock content %}
+</body>
+</html>

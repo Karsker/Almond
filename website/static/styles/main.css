@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    box-sizing:border-box;
+    margin: 0
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #fefdfc;
+}
+
+/* Navigation bar */
+
+nav {
+    height: 50px;
+    /* border: solid blue 2px; */
+    padding: 5px 20px;
+}
+nav ul {
+    list-style: none;
+    float: right;
+    /* border: solid red 2px; */
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+    font-weight: 500;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+#productLogo {
+    font-weight: 600;
+    font-size: 25px;
+    color: rgb(179, 41, 23);
+    line-height: 50px;
+    /* border: solid green 2px; */
+    display: inline-block;
+}
+
+#productLogo img {
+    width: 25px;
+}
+
+.navButton {
+    background:  rgb(179, 41, 23);
+    color: white;
+    padding: 10px 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+
+}
+
+.verticalSeparator {
+    height: 50px;
+    border: solid rgb(167, 167, 167) 1px;
+    margin: 0;
+    display: inline;
+}
+
+#flyoverContainer {
+    position: absolute;
+    display: none;
+    z-index: 10;
+    width: 400px;
+    height: 500px;
+    right: 100px;
+    padding: 10px 15px;
+    background: white;
+    border-radius: 25px;
+    border: solid rgb(214, 214, 214) 1px;
+    box-shadow: 1px 1px 15px  rgb(121, 121, 121);
+    animation: fadeIn 0.5s;
+}
+
+.flyoverEntry {
+    font-size: 14px;
+    margin: 10px 0;
+    color:rgb(88, 88, 88);
+    font-weight: 500;
+}
+
+.flyoverEntry h3 {
+    margin: 5px 0;
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 100;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 100;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
