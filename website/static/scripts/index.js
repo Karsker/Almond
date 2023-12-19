@@ -1,13 +1,10 @@
 function showResourcesFlyover() {
-    let flyover = document.querySelector("#flyoverContainer");
-    flyover.style.display = 'block';
-    
-    
-}
-
-function hideResourcesFlyover() {
-    let flyover = document.querySelector("#flyoverContainer");
-    flyover.style.display = 'none';
-    
-    
+    if (window.innerWidth > 800) {
+        let flyover = document.querySelector("#flyoverContainer");
+        if (flyover.style.display == 'block') {
+            flyover.style.display = 'none';
+        } else {
+            flyover.style.display = 'block';    
+        }
+    }
 }
