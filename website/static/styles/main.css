@@ -14,19 +14,21 @@ body {
 
 nav {
     height: 50px;
-    /* border: solid blue 1px; */
+    border: solid blue 1px;
     padding: 5px 0px;
+    background: rgb(255, 242, 205);
 }
 nav ul {
     width: 100vw;
     display: block;
     list-style: none;
     float: right;
-    line-height: 50px;
+    line-height: 40px;
     top: -100%;
     position: absolute;
-    background: white;
+    background: rgb(255, 242, 205);;
     transition: 0.5s all;
+    color: #161616;
     /* border: solid red 2px; */
 }
 
@@ -34,9 +36,9 @@ nav ul li {
     width: 100%;
     text-align: center;
     display: block;
-    margin: 0 10px;
+    margin: 0;
     font-weight: 500;
-    line-height: 50px;
+    line-height: 40px;
     cursor: pointer;
 }
 
@@ -47,7 +49,10 @@ nav ul li {
     line-height: 50px;
     /* border: solid green 2px; */
     display: inline-block;
-    margin-left: 20px;
+    /* margin-left: 20px; */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #productLogo img {
@@ -70,7 +75,7 @@ nav ul li {
     width: 50px;
     border: solid rgb(167, 167, 167) 1px;
     margin: 0;
-    display: inline;
+    display: none;
 }
 
 #flyoverContainer {
@@ -106,8 +111,8 @@ nav ul li {
     align-items: center;
     width: 100%;
     justify-content: center;
-    height: 100%;
-    padding: 20px 20px;
+    height: calc(100vh - 55px);
+    border: solid red 1px;
 }
 
 .hamburgerLine {
@@ -138,6 +143,38 @@ nav ul li {
     top: 50px;
     transition: 0.5s;
 }
+
+.hamburgerButton > div {
+    transition: 0.5s all;
+}
+
+#navbarToggle:checked ~ label > div > .line1 {
+    transform: rotate(45deg) translateY(10px);
+    transition: 0.2s all;
+}
+
+#navbarToggle:checked ~ label > div > .line3 {
+    transform: rotate(-45deg) translateY(-10px);
+    transition: 0.2s all;
+}
+
+#navbarToggle:checked ~ label > div > .line2 {
+    opacity: 0;
+    transition: 0.2s all;
+}
+/* 
+
+
+.line2 {
+    
+} */
+
+/* for home page */
+
+.home {
+    background: url(../images/landing-page-bg.jpg);
+}
+
 /* Media queries */
 
 @media only screen and (min-width: 900px) {
@@ -150,11 +187,20 @@ nav ul li {
     nav ul li{
         display: inline-block;
         width: fit-content;
+        margin: 0 10px;
     }
 
+    #productLogo {
+        left: 0%;
+        transform: none;
+        margin: 0 20px;
+    }
     #hamburgerLabel {
         display: none;
         
+    }
+    .verticalSeparator {
+        display: inline;
     }
 
     
