@@ -1,8 +1,8 @@
 from . import db
-from flask import Blueprint, render_template, request, flash
+from flask import Blueprint, render_template, request, flash, redirect
 from .models import User
-from werkzeug.security import generate_password_hash
-
+from werkzeug.security import generate_password_hash, check_password_hash
+from flask_login import login_user, current_user
 auth = Blueprint('auth', __name__)
 
 @auth.route('sign-up', methods = ["POST", "GET"])
@@ -46,4 +46,27 @@ def signup():
                 print('New user added to datatbase: ', username)
                 flash('Registered successfully', category='success')
 
-    return render_template('signup.html')
+    return render_template('signup.html', user = current_user)
+
+@auth.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        email = request.form.get('userEmail')
+        password = request.form.get('userPassword')
+
+        # Check if the user exists
+        queried_user = User.query.filter_by(email = email).first()
+
+        # If the user exists, check the password
+        if queried_user:
+            if check_password_hash(queried_user.password, password):
+                # If the password is correct, login the user
+                login_user(queried_user)
+                flash(f'Welcome {queried_user.username}', category='success')
+                redirect('/')
+            else:
+                flash('Invalid password', category='error')
+        else:
+            flash('User not found', category='success')
+    
+    return render_template('login.html', user = current_user)

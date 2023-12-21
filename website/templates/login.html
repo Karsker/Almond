@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock title %}
+{% block extraStyles %}<link rel="stylesheet" href="{{ url_for('static', filename='styles/forms.css') }}">{% endblock extraStyles %}
+{% block content %}
+
+<div class="container ">
+    <a href="/" style="text-decoration: none;">
+        
+        <div id="productLogo">
+            <img alt="almond product logo" src="{{ url_for('static', filename='images/almond-logo.png') }}" />
+            Almond
+        </div>
+    </a>
+    <h1>Login</h1>
+    <form class="formContainer login" method="POST">
+        <div class="formEntry">
+           <label for="userEmail">Email address</label>
+            <input type="text" name="userEmail" id="userEmail">
+        </div>
+
+         <div class="formEntry">
+            <label for="userPassword">Password</label>
+             <input type="password" name="userPassword" id="userPassword">
+         </div>
+
+         <button class="submitButton">Login</button>
+    </form>
+</div>
+{% endblock content %}

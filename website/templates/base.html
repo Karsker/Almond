@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    {% if request.path != '/auth/sign-up' %}
+    {% if ((request.path != '/auth/sign-up') and (request.path != '/auth/login')) %}
     <nav>
         <input type="checkbox" id="navbarToggle" style="display: none;">
         <label for="navbarToggle" id="hamburgerLabel">
@@ -36,10 +36,23 @@
             <li>
                 <div class="verticalSeparator"></div>
             </li>
-            <li>Log in</li>
-            <li><a href="/auth/sign-up"><button class="navButton">Start for free</button></a></li>
+            <!-- Show the login and sign up options only if the user is not logged in -->
+            {% if (user.is_authenticated) %}
+                <li>
+                    <div class="navUserInfo">
+                        {{ user.username }}
+                        <img id="userInfoArrow" width="20px" height="20px" src="{{ url_for('static', filename='/images/down-arrow.png') }}"/>
+                    </div> 
+                    <div class="flyoverContainer userFlyover">
+
+                    </div>
+                </li>
+            {% else %}
+                <li><a href="/auth/login">Log in</a></li>
+                <li><a href="/auth/sign-up"><button class="navButton">Start for free</button></a></li>
+            {% endif %}
         </ul>
-        <div id="flyoverContainer">
+        <div class="flyoverContainer resourcesFlyover">
             <div class="flyoverEntry">
                 <h3>Integrations</h3>
                 Connect Almond with tools like Alexa, Google Calendar etc
@@ -51,6 +64,7 @@
             </div>
 
         </div>
+        
     </nav>
     {% endif %}
 

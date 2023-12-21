@@ -26,7 +26,7 @@ nav {
 nav ul {
     width: 100%;
     display: block;
-    list-style: none;
+    list-style-type: none;
     float: right;
     line-height: 40px;
     top: -100%;
@@ -34,17 +34,25 @@ nav ul {
     background: rgb(255, 242, 205);;
     transition: 0.5s all;
     color: #161616;
-    /* border: solid red 2px; */
+    /* border: solid blue 2px; */
+    padding: 0 0;
 }
 
 nav ul li {
     width: 100%;
     text-align: center;
     display: block;
-    margin: 0;
+    margin: 0 0;
     font-weight: 500;
     line-height: 40px;
     cursor: pointer;
+    /* border: solid red 1px; */
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #161616;
 }
 
 #productLogo {
@@ -82,19 +90,29 @@ nav ul li {
     display: none;
 }
 
-#flyoverContainer {
+.flyoverContainer {
     position: absolute;
     display: none;
     z-index: 10;
-    width: 400px;
-    height: 500px;
-    right: 100px;
+    
     padding: 10px 15px;
     background: white;
     border-radius: 25px;
     border: solid rgb(214, 214, 214) 1px;
     box-shadow: 1px 1px 15px  rgb(121, 121, 121);
     animation: fadeIn 0.5s;
+}
+
+.resourcesFlyover {
+    width: 400px;
+    height: 500px;
+    right: 100px;
+}
+
+.userFlyover {
+    width: 250px;
+    height: 200px;
+    right: 5px;
 }
 
 .flyoverEntry {
@@ -166,6 +184,15 @@ nav ul li {
     opacity: 0;
     transition: 0.2s all;
 }
+
+/* User information */
+.navUserInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5px
+}
+
 
 /* Flash messages */
 
