@@ -8,3 +8,11 @@ function showResourcesFlyover() {
         }
     }
 }
+
+closeBtn = document.querySelector('.messageDismissButton');
+console.log(closeBtn);
+if (closeBtn) {
+    closeBtn.addEventListener('click', (e) => {
+        e.target.parentElement.style.display = 'none';
+    })
+}

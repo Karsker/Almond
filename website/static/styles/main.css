@@ -10,16 +10,21 @@ body {
     background: #fefdfc;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
+
 /* Navigation bar */
 
 nav {
     height: 50px;
-    border: solid blue 1px;
+    /* border: solid blue 1px; */
     padding: 5px 0px;
     background: rgb(255, 242, 205);
 }
 nav ul {
-    width: 100vw;
+    width: 100%;
     display: block;
     list-style: none;
     float: right;
@@ -67,7 +72,6 @@ nav ul li {
     font-weight: 600;
     border: none;
     border-radius: 10px;
-
 }
 
 .verticalSeparator {
@@ -112,7 +116,7 @@ nav ul li {
     width: 100%;
     justify-content: center;
     height: calc(100vh - 55px);
-    border: solid red 1px;
+    /* border: solid red 1px; */
 }
 
 .hamburgerLine {
@@ -162,20 +166,49 @@ nav ul li {
     opacity: 0;
     transition: 0.2s all;
 }
-/* 
 
+/* Flash messages */
 
-.line2 {
-    
-} */
-
-/* for home page */
-
-.home {
-    background: url(../images/landing-page-bg.jpg);
+.flashedMessage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+   
 }
 
+.error {
+    background: rgb(255, 87, 87);
+    color: white;
+}
+.success {
+    background: rgb(37, 255, 153);
+    color: black
+}
+
+.messageDismissButton {
+    margin-left: 5px;
+    background: none;
+    border: none;
+}
+
+.error > button {
+    color: white;
+}
+
+.success > button {
+    color: black;
+}
+/* for home page */
+
+/* .home {
+    background: url(../images/landing-page-bg.jpg);
+} */
+
 /* Media queries */
+
 
 @media only screen and (min-width: 900px) {
     nav ul {

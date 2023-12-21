@@ -7,10 +7,12 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
     <link rel="icon" tyle="image" href="{{ url_for('static', filename='images/almond-logo.png') }}">
     <script src="{{ url_for('static', filename='scripts/index.js') }}" defer></script>
+    {% block extraStyles %}{% endblock extraStyles%}
     <title>{% block title %}{% endblock title %}</title>
 </head>
 
 <body>
+    {% if request.path != '/auth/sign-up' %}
     <nav>
         <input type="checkbox" id="navbarToggle" style="display: none;">
         <label for="navbarToggle" id="hamburgerLabel">
@@ -20,10 +22,12 @@
                 <div class="hamburgerLine line3"></div>
             </div>
         </label>
-        <div id="productLogo">
-            <img alt="almond product logo" src="{{ url_for('static', filename='images/almond-logo.png') }}" />
-            Almond
-        </div>
+        <a href="/" style="text-decoration: none;">
+            <div id="productLogo">
+                <img alt="almond product logo" src="{{ url_for('static', filename='images/almond-logo.png') }}" />
+                Almond
+            </div>
+        </a>
         <ul>
             <li>Features</li>
             <li>For Teams</li>
@@ -33,7 +37,7 @@
                 <div class="verticalSeparator"></div>
             </li>
             <li>Log in</li>
-            <li><button class="navButton">Start for free</button></li>
+            <li><a href="/auth/sign-up"><button class="navButton">Start for free</button></a></li>
         </ul>
         <div id="flyoverContainer">
             <div class="flyoverEntry">
@@ -48,6 +52,27 @@
 
         </div>
     </nav>
+    {% endif %}
+
+    <!-- Flash messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                {% if category == 'error' %}
+                <div class="flashedMessage error">
+                    {{ message }}
+                    <button class="messageDismissButton">x</button>
+                </div>
+                {% else %}
+                <div class="flashedMessage success">
+                    {{ message }}
+                    <button class="messageDismissButton">x</button>
+                </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
     {% block content %}{% endblock content %}
 </body>
 
