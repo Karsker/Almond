@@ -1,49 +1,31 @@
-
-
-
-function showResourcesFlyover() {
-    
-    if (window.innerWidth > 800) {
-        let flyover = document.querySelector(".resourcesFlyover");
-        if (flyover.style.display == 'block') {
-            flyover.style.display = 'none';
-        } else {
-            flyover.style.display = 'block';    
-        }
-    }
-}
-
 function showUserInfo() {
-    
-    let arrow = document.querySelector('#userInfoArrow');
-    if (arrow.style.transform == 'rotate(180deg)') {
-        arrow.style.transform = 'rotate(0deg)';
+    let arrow = document.querySelector("#userInfoArrow");
+    if (arrow.style.transform == "rotate(180deg)") {
+        arrow.style.transform = "rotate(0deg)";
     } else {
-        arrow.style.transform = 'rotate(180deg)';
+        arrow.style.transform = "rotate(180deg)";
     }
-    arrow.style.transition = '0.5s'
+    arrow.style.transition = "0.5s";
 
-    if (window.innerWidth > 800) {
-        let flyover = document.querySelector(".userFlyover");
-        if (flyover.style.display == 'block') {
-            flyover.style.display = 'none';
-        } else {
-            flyover.style.display = 'block';    
-        }
+    let options = document.querySelector(".userOptions");
+
+    if (window.getComputedStyle(options).maxHeight == "40px") {
+        options.style.maxHeight = "0";
+    } else {
+        options.style.maxHeight = "40px";
     }
 }
 
-let closeBtn = document.querySelector('.messageDismissButton');
+let closeBtn = document.querySelector(".messageDismissButton");
 
 if (closeBtn) {
-    closeBtn.addEventListener('click', (e) => {
-        e.target.parentElement.style.display = 'none';
-    })
+    closeBtn.addEventListener("click", (e) => {
+        e.target.parentElement.style.display = "none";
+    });
 }
 
-let userInfo = document.querySelector('.navUserInfo');
+let userInfo = document.querySelector(".navUserInfo");
 
 if (userInfo) {
-    userInfo.addEventListener('click', showUserInfo);
+    userInfo.addEventListener("click", showUserInfo);
 }
-

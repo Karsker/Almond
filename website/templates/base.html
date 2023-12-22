@@ -43,8 +43,8 @@
                         {{ user.username }}
                         <img id="userInfoArrow" width="20px" height="20px" src="{{ url_for('static', filename='/images/down-arrow.png') }}"/>
                     </div> 
-                    <div class="flyoverContainer userFlyover">
-
+                    <div class="userOptions">
+                        <a href="/auth/logout">Logout</a>
                     </div>
                 </li>
             {% else %}
@@ -52,18 +52,7 @@
                 <li><a href="/auth/sign-up"><button class="navButton">Start for free</button></a></li>
             {% endif %}
         </ul>
-        <div class="flyoverContainer resourcesFlyover">
-            <div class="flyoverEntry">
-                <h3>Integrations</h3>
-                Connect Almond with tools like Alexa, Google Calendar etc
-            </div>
-
-            <div class="flyoverEntry">
-                <h3>Getting started guide</h3>
-                Everything you need to know to get your Almond setup up and running
-            </div>
-
-        </div>
+        
         
     </nav>
     {% endif %}

@@ -1,232 +1,202 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap");
 
 * {
-    box-sizing:border-box;
-    margin: 0
+  box-sizing: border-box;
+  margin: 0;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    background: #fefdfc;
+  font-family: "Montserrat", sans-serif;
+  background: #fefdfc;
 }
 
 button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
-
 
 /* Navigation bar */
 
 nav {
-    height: 50px;
-    /* border: solid blue 1px; */
-    padding: 5px 0px;
-    background: rgb(255, 242, 205);
+  height: 50px;
+  /* border: solid blue 1px; */
+  padding: 5px 0px;
+  background: rgb(255, 242, 205);
 }
 nav ul {
-    width: 100%;
-    display: block;
-    list-style-type: none;
-    float: right;
-    line-height: 40px;
-    top: -100%;
-    position: absolute;
-    background: rgb(255, 242, 205);;
-    transition: 0.5s all;
-    color: #161616;
-    /* border: solid blue 2px; */
-    padding: 0 0;
+  width: 100%;
+  display: block;
+  list-style-type: none;
+  float: right;
+  line-height: 40px;
+  top: -100%;
+  position: absolute;
+  background: rgb(255, 242, 205);
+  transition: 0.5s all;
+  color: #161616;
+  /* border: solid blue 2px; */
+  padding: 0 0;
 }
 
 nav ul li {
-    width: 100%;
-    text-align: center;
-    display: block;
-    margin: 0 0;
-    font-weight: 500;
-    line-height: 40px;
-    cursor: pointer;
-    /* border: solid red 1px; */
-    position: relative;
+  width: 100%;
+  text-align: center;
+  display: block;
+  margin: 0 0;
+  font-weight: 500;
+  line-height: 40px;
+  cursor: pointer;
+  /* border: solid red 1px; */
+  position: relative;
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: #161616;
+  text-decoration: none;
+  color: #161616;
 }
 
 #productLogo {
-    font-weight: 600;
-    font-size: 25px;
-    color: rgb(179, 41, 23);
-    line-height: 50px;
-    /* border: solid green 2px; */
-    display: inline-block;
-    /* margin-left: 20px; */
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+  font-weight: 600;
+  font-size: 25px;
+  color: rgb(179, 41, 23);
+  line-height: 50px;
+  /* border: solid green 2px; */
+  display: inline-block;
+  /* margin-left: 20px; */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 #productLogo img {
-    width: 25px;
+  width: 25px;
 }
 
 .navButton {
-    background:  rgb(179, 41, 23);
-    color: white;
-    padding: 10px 15px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    border: none;
-    border-radius: 10px;
+  background: rgb(179, 41, 23);
+  color: white;
+  padding: 10px 15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
 }
 
 .verticalSeparator {
-    height: 0px;
-    width: 50px;
-    border: solid rgb(167, 167, 167) 1px;
-    margin: 0;
-    display: none;
+  height: 0px;
+  width: 50px;
+  border: solid rgb(167, 167, 167) 1px;
+  margin: 0;
+  display: none;
 }
 
-.flyoverContainer {
-    position: absolute;
-    display: none;
-    z-index: 10;
-    
-    padding: 10px 15px;
-    background: white;
-    border-radius: 25px;
-    border: solid rgb(214, 214, 214) 1px;
-    box-shadow: 1px 1px 15px  rgb(121, 121, 121);
-    animation: fadeIn 0.5s;
+.userOptions {
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 0;
+  position: absolute;
+  transition: 0.2s ease-in;
+  background: rgb(255, 228, 154);
 }
-
-.resourcesFlyover {
-    width: 400px;
-    height: 500px;
-    right: 100px;
-}
-
-.userFlyover {
-    width: 250px;
-    height: 200px;
-    right: 5px;
-}
-
-.flyoverEntry {
-    font-size: 14px;
-    margin: 10px 0;
-    color:rgb(88, 88, 88);
-    font-weight: 500;
-}
-
-.flyoverEntry h3 {
-    margin: 5px 0;
-}
-
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    justify-content: center;
-    height: calc(100vh - 55px);
-    /* border: solid red 1px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  height: calc(100vh - 55px);
+  /* border: solid red 1px; */
 }
 
 .hamburgerLine {
-    height: 2px;
-    width: 25px;
-    background: #646464;
-    margin: 5px 0px;
-    border: none;
-    border-radius: 25px;
+  height: 2px;
+  width: 25px;
+  background: #646464;
+  margin: 5px 0px;
+  border: none;
+  border-radius: 25px;
 }
 
-#hamburgerLabel{
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    /* border: solid red 1px; */
-    float: right;
-    line-height: 50px;
-    height: 50px;
-    margin-right: 20px;
+#hamburgerLabel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* border: solid red 1px; */
+  float: right;
+  line-height: 50px;
+  height: 50px;
+  margin-right: 20px;
 }
 .hamburgerButton {
-    padding: 2px 2px;
-    cursor: pointer;
+  padding: 2px 2px;
+  cursor: pointer;
 }
 
-#navbarToggle:checked ~ ul{
-    top: 50px;
-    transition: 0.5s;
+#navbarToggle:checked ~ ul {
+  top: 50px;
+  transition: 0.5s;
 }
 
 .hamburgerButton > div {
-    transition: 0.5s all;
+  transition: 0.5s all;
 }
 
 #navbarToggle:checked ~ label > div > .line1 {
-    transform: rotate(45deg) translateY(10px);
-    transition: 0.2s all;
+  transform: rotate(45deg) translateY(10px);
+  transition: 0.2s all;
 }
 
 #navbarToggle:checked ~ label > div > .line3 {
-    transform: rotate(-45deg) translateY(-10px);
-    transition: 0.2s all;
+  transform: rotate(-45deg) translateY(-10px);
+  transition: 0.2s all;
 }
 
 #navbarToggle:checked ~ label > div > .line2 {
-    opacity: 0;
-    transition: 0.2s all;
+  opacity: 0;
+  transition: 0.2s all;
 }
 
 /* User information */
 .navUserInfo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 5px
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5px;
 }
-
 
 /* Flash messages */
 
 .flashedMessage {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 40px;
-    text-align: center;
-   
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  text-align: center;
 }
 
 .error {
-    background: rgb(255, 87, 87);
-    color: white;
+  background: rgb(255, 87, 87);
+  color: white;
 }
 .success {
-    background: rgb(37, 255, 153);
-    color: black
+  background: rgb(37, 255, 153);
+  color: black;
 }
 
 .messageDismissButton {
-    margin-left: 5px;
-    background: none;
-    border: none;
+  margin-left: 5px;
+  background: none;
+  border: none;
 }
 
 .error > button {
-    color: white;
+  color: white;
 }
 
 .success > button {
-    color: black;
+  color: black;
 }
 /* for home page */
 
@@ -236,53 +206,56 @@ nav ul li a {
 
 /* Media queries */
 
-
 @media only screen and (min-width: 900px) {
-    nav ul {
-        position: relative;
-        top: 0%;
-        width: fit-content;
-    }
-    
-    nav ul li{
-        display: inline-block;
-        width: fit-content;
-        margin: 0 10px;
-    }
+  nav ul {
+    position: relative;
+    top: 0%;
+    width: fit-content;
+  }
 
-    #productLogo {
-        left: 0%;
-        transform: none;
-        margin: 0 20px;
-    }
-    #hamburgerLabel {
-        display: none;
-        
-    }
-    .verticalSeparator {
-        display: inline;
-    }
+  nav ul li {
+    display: inline-block;
+    width: fit-content;
+    margin: 0 10px;
+  }
 
-    
+  #productLogo {
+    left: 0%;
+    transform: none;
+    margin: 0 20px;
+  }
+  #hamburgerLabel {
+    display: none;
+  }
+  .verticalSeparator {
+    display: inline;
+  }
+
+  .userOptions {
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: solid rgb(214, 214, 214) 1px;
+    box-shadow: 1px 1px 15px rgb(121, 121, 121);
+  }
 }
 
 /* Animations */
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
 
-    100% {
-        opacity: 100;
-    }
+  100% {
+    opacity: 100;
+  }
 }
 
 @keyframes fadeOut {
-    0% {
-        opacity: 100;
-    }
+  0% {
+    opacity: 100;
+  }
 
-    100% {
-        opacity: 0;
-    }
+  100% {
+    opacity: 0;
+  }
 }
