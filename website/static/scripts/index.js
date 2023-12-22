@@ -16,6 +16,12 @@ function showUserInfo() {
     }
 }
 
+function addNote() {
+    let newNote = document.querySelector(".newNoteContainer");
+    newNote.style.display = "block";
+
+}
+
 let closeBtn = document.querySelector(".messageDismissButton");
 
 if (closeBtn) {
@@ -29,3 +35,4 @@ let userInfo = document.querySelector(".navUserInfo");
 if (userInfo) {
     userInfo.addEventListener("click", showUserInfo);
 }
+

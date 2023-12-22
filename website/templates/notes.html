@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}My Notes{% endblock title %}
+{% block extraStyles %}<link rel="stylesheet" href="{{ url_for('static', filename='styles/notes.css') }}">{% endblock extraStyles%}
+{% block content %}
+
+<div class="notesContainer">
+    <div style="width: 100%;display: flex; justify-content: space-between;">
+        <h1>All Notes</h1>
+        <button class="navButton" onclick="addNote()">Create a new note</button>
+    </div>
+
+    <!-- Form for adding a note -->
+    <div class="newNoteContainer">
+        <form method="POST">
+            <textarea name="noteTitle" id="noteTitle" placeholder="Note title"></textarea>
+            <textarea  name="noteContent" id="noteContent" placeholder="Start typing your note here"></textarea>
+            <button class="navButton" style="width: 100px; position: absolute; left: 10px; bottom: 10px;">Add</button>
+        </form>
+        <button class="messageDismissButton noteDismiss">X</button>
+    </div>
+
+   <div class="userNotesSection">
+    {% for note in user_notes %}
+        <div class="userNote">
+            <h1>{{ note.title }}</h1>
+            <p style="height: 60px;font-size: 15px; overflow: hidden;">{{ note.content }}</p>
+            <button class="navButton">Delete</button>
+        </div>
+    {% endfor %}
+   </div>
+    
+</div>
+
+{% endblock content %}

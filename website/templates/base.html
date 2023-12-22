@@ -39,6 +39,9 @@
             <!-- Show the login and sign up options only if the user is not logged in -->
             {% if (user.is_authenticated) %}
                 <li>
+                    <a href="/notes">My notes</a>
+                </li>
+                <li>
                     <div class="navUserInfo">
                         {{ user.username }}
                         <img id="userInfoArrow" width="20px" height="20px" src="{{ url_for('static', filename='/images/down-arrow.png') }}"/>
