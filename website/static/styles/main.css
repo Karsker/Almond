@@ -91,6 +91,8 @@ nav ul li a {
 }
 
 .userOptions {
+  display: flex;
+    flex-direction: column;
   width: 100%;
   max-height: 0;
   overflow: hidden;
@@ -237,6 +239,7 @@ nav ul li a {
     border-radius: 5px;
     border: solid rgb(214, 214, 214) 1px;
     box-shadow: 1px 1px 15px rgb(121, 121, 121);
+    
   }
 }
 

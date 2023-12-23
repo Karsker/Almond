@@ -38,45 +38,45 @@
             </li>
             <!-- Show the login and sign up options only if the user is not logged in -->
             {% if (user.is_authenticated) %}
-                <li>
+
+            <li>
+                <div class="navUserInfo">
+                    {{ user.username }}
+                    <img id="userInfoArrow" width="20px" height="20px"
+                        src="{{ url_for('static', filename='/images/down-arrow.png') }}" />
+                </div>
+                <div class="userOptions">
+                    <a href="/auth/logout">Logout</a>
                     <a href="/notes">My notes</a>
-                </li>
-                <li>
-                    <div class="navUserInfo">
-                        {{ user.username }}
-                        <img id="userInfoArrow" width="20px" height="20px" src="{{ url_for('static', filename='/images/down-arrow.png') }}"/>
-                    </div> 
-                    <div class="userOptions">
-                        <a href="/auth/logout">Logout</a>
-                    </div>
-                </li>
+                </div>
+            </li>
             {% else %}
-                <li><a href="/auth/login">Log in</a></li>
-                <li><a href="/auth/sign-up"><button class="navButton">Start for free</button></a></li>
+            <li><a href="/auth/login">Log in</a></li>
+            <li><a href="/auth/sign-up"><button class="navButton">Start for free</button></a></li>
             {% endif %}
         </ul>
-        
-        
+
+
     </nav>
     {% endif %}
 
     <!-- Flash messages -->
     {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            {% for category, message in messages %}
-                {% if category == 'error' %}
-                <div class="flashedMessage error">
-                    {{ message }}
-                    <button class="messageDismissButton">x</button>
-                </div>
-                {% else %}
-                <div class="flashedMessage success">
-                    {{ message }}
-                    <button class="messageDismissButton">x</button>
-                </div>
-                {% endif %}
-            {% endfor %}
-        {% endif %}
+    {% if messages %}
+    {% for category, message in messages %}
+    {% if category == 'error' %}
+    <div class="flashedMessage error">
+        {{ message }}
+        <button class="messageDismissButton">x</button>
+    </div>
+    {% else %}
+    <div class="flashedMessage success">
+        {{ message }}
+        <button class="messageDismissButton">x</button>
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
     {% endwith %}
 
     {% block content %}{% endblock content %}

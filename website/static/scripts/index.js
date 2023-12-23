@@ -9,10 +9,10 @@ function showUserInfo() {
 
     let options = document.querySelector(".userOptions");
 
-    if (window.getComputedStyle(options).maxHeight == "40px") {
+    if (window.getComputedStyle(options).maxHeight == "80px") {
         options.style.maxHeight = "0";
     } else {
-        options.style.maxHeight = "40px";
+        options.style.maxHeight = "80px";
     }
 }
 
