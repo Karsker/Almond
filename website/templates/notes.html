@@ -4,7 +4,7 @@
 {% block content %}
 
 <div class="notesContainer">
-    <div style="width: 100%;display: flex; justify-content: space-between;">
+    <div id="notesPageHeader" style="">
         <h1>All Notes</h1>
         <button class="navButton" onclick="addNote()">Create a new note</button>
     </div>
@@ -23,8 +23,8 @@
     {% for note in user_notes %}
         <div class="userNote">
             <h1>{{ note.title }}</h1>
-            <p style="height: 60px;font-size: 15px; overflow: hidden;">{{ note.content }}</p>
-            <button class="navButton">Delete</button>
+            <p style="height: 60px;font-size: 13px; overflow: hidden;">{{ note.content }}</p>
+            <form method="POST" action="/deleteNote"><button class="navButton" value="{{ note.id }}" name="deleteButton">Delete</button></form>
         </div>
     {% endfor %}
    </div>

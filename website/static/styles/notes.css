@@ -1,3 +1,12 @@
+#notesPageHeader {
+    width: 100%;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+    justify-content: space-between;
+}
+
 .notesContainer {
     display: flex;
     flex-direction: column;
@@ -6,6 +15,7 @@
     position: relative;
     align-items: center;
     /* border: solid red 1px; */
+    width: 100%;
 }
 
 .newNoteContainer {
@@ -13,11 +23,11 @@
     background: white;
     left: 50%;
     transform: translateX(-50%);
-    width: 1000px;
-    height: 800px;
+    width: 80vw;
+    height: 80vh;
     border: solid rgb(228, 228, 228) 1px;
     border-radius: 5px;
-    z-index: 10;
+    z-index: 5;
     box-shadow: 1px 1px 15px rgb(121, 121, 121);
     display: none;
     padding: 15px 15px;
@@ -29,6 +39,7 @@
     flex-direction: column;
     padding: 10px 20px;
     row-gap: 10px;
+    height: 100%;
 }
 
 textarea {
@@ -42,21 +53,12 @@ textarea {
 }
 
 #noteTitle {
-    border-bottom: solid #6b6b6b 1px;
     font-weight: 600;
-    max-height: 50px;
-    min-height: 50px;
-    max-width: 930px;
-    min-width: 930px;
 }
 
 #noteContent {
-    height: 500px;
-    /* border: solid red 1px; */
-    max-height: 500px;
-    min-height: 500px;
-    max-width: 930px;
-    min-width: 930px;
+  font-size: 16px;
+  height: 60%;
 }
 
 .noteDismiss {
@@ -77,12 +79,17 @@ textarea {
 .userNote {
     width: 100%;
     height: 150px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    text-align: justify;
     border: solid rgb(223, 223, 223) 1px;
     border-radius: 5px;
     padding: 10px 20px;
     background: #f1f1f1;
     margin: 10px 0;
     cursor: pointer;
+    font-size: 10px;
 }
 
 
@@ -93,4 +100,14 @@ textarea {
 
 .userNote h1{
     font-size: 20px;
+}
+
+/* Media queries */
+@media only screen and (min-width: 900px) {
+    #notesPageHeader {
+        width: 100%;
+        display: flex; 
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }

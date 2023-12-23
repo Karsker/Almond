@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, flash
+from flask import Blueprint, render_template, request, flash, redirect, url_for
 from flask_login import current_user, login_required
 from . import db
 from .models import Note
@@ -24,3 +24,13 @@ def notes():
         db.session.add(new_note)
         db.session.commit()
     return render_template('notes.html',user=current_user, user_notes = user_notes)
+
+@views.route('/deleteNote', methods=['POST'])
+def deleteNote():
+    note_id = request.form.get('deleteButton')
+    print(note_id)
+    note_to_delete = Note.query.filter_by(id = note_id).first()
+    db.session.delete(note_to_delete)
+    db.session.commit()
+    flash('Note deleted', category='success')
+    return redirect(url_for('views.notes'))

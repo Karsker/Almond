@@ -22,12 +22,15 @@ function addNote() {
 
 }
 
-let closeBtn = document.querySelector(".messageDismissButton");
+let closeBtns = document.querySelectorAll(".messageDismissButton");
 
-if (closeBtn) {
-    closeBtn.addEventListener("click", (e) => {
-        e.target.parentElement.style.display = "none";
-    });
+if (closeBtns) {
+    Array.from(closeBtns).forEach(closeBtn => {
+        closeBtn.addEventListener("click", (e) => {
+            e.target.parentElement.style.display = "none";
+        });
+    })
+    
 }
 
 let userInfo = document.querySelector(".navUserInfo");
